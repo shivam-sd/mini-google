@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        border:2px solid black;
+        width: 150px;
+        height: 60px;
+    }
+    #search{
+        width: 200px;
+        height: 30px;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 1px 0px 3px 4px black;
+    }
+
+input placeholderx{
+    font-size: 15px;
+    color: black;
+
+}
+#search1{
+    width: 120px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 0px 4px;
+    margin-left: 10px;
+}
+</style>
+<body>
+    
+<input type="text" id="n1">
+<button>result</button>
+<p></p>
+
+
+<input type="text" id="input">
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+<button id="clear">Clear</button>
+
+
+<img src="images-removebg-preview.png" alt="">
+<input type="text" id="search" placeholder="search for you">
+<button id="search1">Search</button>
+<button id="clear">Clear</button>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+let inp = document.getElementById("search");
+let find = document.getElementById("search1");
+let btnss = document.querySelectorAll("button");
+// let clr = document.getElementById("clear");
+
+let arr1 = Array.from(btnss);
+arr1.forEach((btn1) => {
+    btn1.addEventListener("click",(e) => {
+        if(e.target.innerHTML == "Clear"){
+            let str = "";
+            inp.value = str;
+        }
+    })
+})
+
+find.addEventListener("click",() => {
+    window.location.href = `https://www.google.com/search?q=${inp.value}`;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let input = document.getElementById("n1");
+let btn = document.querySelector("button");
+let p = document.querySelector("p");
+
+btn.addEventListener("click",() => {
+    let str = input.value;
+    // let res = eval(str);
+    p.innerHTML = str;
+})
+
+let inpt = document.getElementById("input");
+let btns = document.querySelectorAll("button");
+let string = "";
+
+
+let arr = Array.from(btns);
+
+arr.forEach((btn) => {
+    btn.addEventListener("click",(e) => {
+        if(e.target.innerHTML == 'Clear'){
+            string = "";
+            inpt.value = string;
+        }
+        else{
+        string = string + e.target.innerHTML;
+        inpt.value = string;
+        }
+    })
+})
+
+
+</script>
+</body>
+</html>
